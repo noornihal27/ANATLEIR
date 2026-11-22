@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEP Drafting Services | HVAC Drafting Services</title>
+<meta name="description" content="Expert MEP drafting solutions for HVAC, Electrical and Plumbing, delivered with precision and efficiency.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e1a33; --navy-2:#16284d; --blue:#1565e0; --blue-2:#2f8cff;
+  --ink:#0d1220; --muted:#3b4558; --sky-1:#dfe8f7; --sky-2:#f3f6fc; --line:#c9d3e6;
+  --wa-text:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--sky-2)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--blue-2);outline-offset:3px}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;
+  background:
+    radial-gradient(ellipse at 30% 10%,#fff 0%,rgba(255,255,255,0) 55%),
+    linear-gradient(180deg,#cfdcf3 0%,#e8eefa 45%,#f6f8fd 100%);
+}
+/* Replace the background-image URL with your own building render for the full look */
+.hero-visual{
+  position:absolute;right:0;top:6%;width:62%;height:68%;z-index:0;
+  background:url("hero-building.jpg") right center/contain no-repeat;
+}
+.hero-visual svg{position:absolute;inset:0;width:100%;height:100%}
+.hero-visual.has-image svg{display:none}
+
+/* NAV */
+.nav{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  padding:28px 6.5vw;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;padding-right:32px;border-right:1px solid var(--line)}
+.brand svg{width:56px;height:52px;flex:none}
+.brand b{display:block;font-size:26px;line-height:1;font-weight:700;letter-spacing:-.02em;color:var(--navy)}
+.brand small{display:block;margin-top:6px;font-size:9.5px;letter-spacing:.04em;color:var(--muted)}
+.menu{display:flex;gap:40px;list-style:none;margin-right:auto;margin-left:36px}
+.menu a{display:block;padding:10px 0;font-size:15px;font-weight:500;color:var(--ink);border-bottom:2px solid transparent}
+.menu a.active{font-weight:700;border-color:var(--blue)}
+.menu a:hover{color:var(--blue)}
+.caret{display:inline-block;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-3px);margin-left:7px}
+.wa{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--wa-text);
+  padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid #2a3c66;
+  transition:background .2s}
+.wa:hover{background:var(--navy-2)}
+.wa svg{width:26px;height:26px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--navy);margin:7px 8px}
+
+/* COPY */
+.copy{position:relative;z-index:3;padding:36px 6.5vw 0;max-width:760px}
+.tag{display:flex;align-items:center;gap:18px;font-size:13px;letter-spacing:.3em;color:var(--muted);font-weight:500}
+.tag::after{content:"";width:100px;height:1px;background:var(--muted)}
+h1{margin-top:24px;font-size:clamp(52px,7.4vw,92px);line-height:.92;font-weight:800;letter-spacing:-.045em;color:var(--ink)}
+h1 .mep{background:linear-gradient(90deg,#0a4fd0,#2f8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.slogan{margin-top:26px;font-size:clamp(24px,2.6vw,34px);font-weight:400;color:#1c2436;letter-spacing:-.01em}
+.lead{margin-top:18px;max-width:480px;font-size:18px;line-height:1.55;color:#252e42}
+.cta{display:flex;align-items:center;gap:44px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--navy);color:#fff;padding:17px 28px;border-radius:999px;font-weight:600;font-size:16px;transition:transform .2s,background .2s}
+.btn:hover{background:var(--navy-2);transform:translateY(-2px)}
+.btn svg{width:20px;height:20px}
+.intro{display:inline-flex;align-items:center;gap:14px;font-weight:600;font-size:16px;background:none;border:0;cursor:pointer;color:var(--ink);font-family:inherit}
+.play{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--navy);display:grid;place-items:center}
+.play::before{content:"";border-left:13px solid var(--navy);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+
+/* SERVICES STRIP */
+.services{position:relative;z-index:3;margin:44px 6.5vw 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.9);
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:980px}
+.svc{display:flex;flex-direction:column;align-items:center;text-align:center;padding:6px 10px;font-size:15px;font-weight:500;color:var(--navy-2);line-height:1.25}
+.svc + .svc{border-left:1px solid #aab6cf}
+.svc svg{width:44px;height:44px;margin-bottom:6px;stroke:var(--navy);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.svc a{display:flex;flex-direction:column;align-items:center}
+.svc a:hover{color:var(--blue)}
+
+/* BOTTOM BAND */
+.band{position:relative;z-index:3;margin-top:auto;display:flex;align-items:stretch;justify-content:space-between;gap:24px;min-height:150px}
+.trust{position:relative;flex:0 0 min(56%,780px);padding:36px 6.5vw 36px 6.5vw;color:#fff;
+  background:linear-gradient(120deg,var(--navy) 0%,#17294d 70%,transparent 70.2%);
+  clip-path:polygon(0 0,86% 0,100% 100%,0 100%);margin-top:30px}
+.trust::before{content:"";position:absolute;left:6.5vw;top:38px;bottom:38px;width:3px;background:var(--blue-2);margin-left:-18px}
+.trust h2{font-size:17px;letter-spacing:.3em;font-weight:500;line-height:1.5;color:#c8d4ee}
+.trust p{margin-top:8px;font-size:16px;color:#c0cde8}
+.stats{display:flex;align-items:center;padding:36px 6.5vw 36px 0;color:var(--navy)}
+.stat{padding:0 34px}
+.stat + .stat{border-left:1px solid #9aa8c4}
+.stat b{display:block;font-size:40px;line-height:1;font-weight:700;letter-spacing:-.02em;color:#1a2a52}
+.stat span{display:block;margin-top:6px;font-size:15px;color:#2a3550}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1100px){
+  .menu{gap:22px;margin-left:16px}
+  .hero-visual{width:70%;opacity:.55}
+  .band{flex-direction:column;gap:0}
+  .trust{flex:none;clip-path:none;margin-top:30px}
+  .stats{padding:24px 6.5vw;background:rgba(255,255,255,.7)}
+}
+@media (max-width:860px){
+  .menu,.wa{display:none}
+  .burger{display:block}
+  .nav.open .menu{display:flex;position:absolute;top:100%;left:6.5vw;right:6.5vw;flex-direction:column;gap:0;margin:0;background:#fff;border-radius:16px;padding:10px 20px;box-shadow:0 18px 40px rgba(14,26,51,.18)}
+  .nav.open .wa{display:inline-flex;position:absolute;top:calc(100% + 290px);left:6.5vw}
+  .brand{border:0;padding:0;margin-right:auto}
+  .services{grid-template-columns:repeat(2,1fr);row-gap:18px}
+  .svc:nth-child(3){border-left:0}
+  .stats{flex-wrap:wrap;row-gap:16px}
+  .stat{padding:0 20px}
+  .stat:first-child{padding-left:0}
+}
+@media (max-width:520px){
+  .brand b{font-size:20px}.brand small{display:none}
+  .cta{gap:20px}.stat b{font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* modal for intro video */
+dialog{margin:auto;border:0;border-radius:18px;padding:0;width:min(860px,92vw);background:#000;overflow:hidden}
+dialog::backdrop{background:rgba(8,14,30,.7)}
+dialog video{display:block;width:100%}
+dialog .x{position:absolute;right:12px;top:10px;z-index:2;background:#fff;border:0;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header class="hero" id="home">
+  <!-- Building illustration: swap for your own image by adding class "has-image" and putting hero-building.jpg next to this file -->
+  <div class="hero-visual" aria-hidden="true">
+    <svg viewBox="0 0 800 520" preserveAspectRatio="xMaxYMid meet">
+      <defs>
+        <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3a55"/><stop offset="1" stop-color="#f2c98a"/></linearGradient>
+        <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe6f3"/><stop offset="1" stop-color="#f6f8fd"/></linearGradient>
+      </defs>
+      <rect y="400" width="800" height="120" fill="url(#floor)"/>
+      <polygon points="20,150 330,60 330,400 20,400" fill="#3a4559"/>
+      <polygon points="60,200 310,130 310,390 60,390" fill="url(#glass)" opacity=".9"/>
+      <rect x="330" y="150" width="190" height="250" fill="url(#glass)"/>
+      <g stroke="#0e1a33" stroke-width="2" opacity=".55">
+        <path d="M330 150V400M390 150V400M450 150V400M520 150V400M20 300H330M330 280H520"/>
+      </g>
+      <!-- BIM wireframe -->
+      <g fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1">
+        <path d="M520 40L780 40L780 400L520 400Z M520 110H780M520 190H780M520 270H780M520 340H780M600 40V400M690 40V400"/>
+      </g>
+      <g fill="none" stroke-linecap="round" stroke-width="14">
+        <path d="M545 110H760V330" stroke="#2f8cff"/>
+        <path d="M545 190H700V340" stroke="#2f8cff" stroke-width="18"/>
+      </g>
+      <g fill="none" stroke-linecap="round" stroke-width="5">
+        <path d="M560 85V300H740" stroke="#e03a4a"/>
+        <path d="M580 70V350H720" stroke="#e03a4a"/>
+        <path d="M600 230H770V120" stroke="#25b35a"/>
+        <path d="M650 90V360" stroke="#25b35a"/>
+      </g>
+    </svg>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Main">
+    <a class="brand" href="#home" aria-label="HVAC Drafting Services home">
+      <svg viewBox="0 0 60 56" aria-hidden="true">
+        <path d="M2 54V26l12-6v34M14 54V10L28 2v52M28 54V16l14-6v44M42 54V28l14-4v30" fill="#1565e0" fill-opacity=".15" stroke="#1565e0" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M0 54h60" stroke="#0e1a33" stroke-width="3"/>
+        <path d="M19 18v30M33 24v24M47 32v16" stroke="#0e1a33" stroke-width="2"/>
+      </svg>
+      <span><b>HVAC Drafting<br>Services</b><small>MEP DESIGN • DRAFTING • BIM SOLUTIONS</small></span>
+    </a>
+
+    <ul class="menu">
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services<i class="caret"></i></a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a class="wa" href="https://wa.me/971500000000" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.7L3 29l6.5-2A13 13 0 1 0 16 3z" stroke-linejoin="round"/><path d="M11.5 10.5c.5 4.5 4.5 8.5 9.5 9.5l1.5-2-3-1.5-1.2 1c-1.5-.6-3-2.100-3.600-3.600l1-1.200L13 9z" fill="#fff" stroke="none"/></svg>
+      Chat on WhatsApp
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+    </a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" id="burger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section class="copy">
+    <p class="tag">DESIGN • DRAFT • BUILD BETTER</p>
+    <h1><span class="mep">MEP</span> Drafting<br>Services</h1>
+    <p class="slogan">Professional. Accurate. On Time.</p>
+    <p class="lead">Expert MEP drafting solutions for HVAC, Electrical and Plumbing, delivered with precision and efficiency.</p>
+    <div class="cta">
+      <a class="btn" href="#portfolio">Explore Our Portfolio
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+      <button class="intro" id="introBtn" type="button"><span class="play"></span>Watch Intro</button>
+    </div>
+  </section>
+
+  <section class="services" id="services" aria-label="Services">
+    <div class="svc"><a href="#hvac">
+      <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="3"/><path d="M24 21c-2-8-1-14 4-15 5 0 4 8-4 15zM27 24c8-2 14-1 15 4 0 5-8 4-15-4zM24 27c2 8 1 14-4 15-5 0-4-8 4-15zM21 24c-8 2-14 1-15-4 0-5 8-4 15 4z"/></svg>
+      HVAC<br>Design &amp; Drafting</a></div>
+    <div class="svc"><a href="#electrical">
+      <svg viewBox="0 0 48 48"><path d="M28 4L12 26h10l-4 18 18-24H26z"/></svg>
+      Electrical<br>Drafting</a></div>
+    <div class="svc"><a href="#plumbing">
+      <svg viewBox="0 0 48 48"><path d="M24 5C18 16 12 22 12 30a12 12 0 0 0 24 0c0-8-6-14-12-25z"/><path d="M19 32a5 5 0 0 0 4 5"/></svg>
+      Plumbing<br>Design</a></div>
+    <div class="svc"><a href="#bim">
+      <svg viewBox="0 0 48 48"><path d="M24 4l17 9v22l-17 9-17-9V13zM7 13l17 9 17-9M24 22v22"/></svg>
+      BIM Services</a></div>
+  </section>
+
+  <div class="band">
+    <div class="trust">
+      <h2>YOUR TRUSTED<br>MEP DRAFTING PARTNER</h2>
+      <p>Turning your ideas into detailed, buildable solutions.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="100">100+</b><span>Projects Completed</span></div>
+      <div class="stat"><b data-count="98">98%</b><span>Client Satisfaction</span></div>
+      <div class="stat"><b>On-Time</b><span>Delivery</span></div>
+    </div>
+  </div>
+</header>
+
+<dialog id="introDialog">
+  <button class="x" id="closeIntro" aria-label="Close video">&times;</button>
+  <video id="introVideo" controls preload="none" src="intro.mp4"></video>
+</dialog>
+
+<script>
+// Mobile menu
+const nav = document.getElementById('nav'), burger = document.getElementById('burger');
+burger.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+});
+
+// Intro video modal
+const dlg = document.getElementById('introDialog'), vid = document.getElementById('introVideo');
+document.getElementById('introBtn').addEventListener('click', () => dlg.showModal());
+function closeDlg(){ vid.pause(); dlg.close(); }
+document.getElementById('closeIntro').addEventListener('click', closeDlg);
+dlg.addEventListener('click', e => { if (e.target === dlg) closeDlg(); });
+
+// Count-up stats (once, on load)
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const end = +el.dataset.count, suffix = el.textContent.replace(/[0-9]/g, '');
+    const t0 = performance.now(), dur = 1400;
+    (function tick(t){
+      const p = Math.min((t - t0) / dur, 1);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  });
+}
+
+// Use a real render if present
+const img = new Image();
+img.onload = () => document.querySelector('.hero-visual').classList.add('has-image');
+img.src = 'hero-building.jpg';
+</script>
+</body>
+</html>
